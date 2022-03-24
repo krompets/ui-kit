@@ -20,7 +20,7 @@ module.exports = {
       description: 'lint and keep things DRY',
       script: concurrent.nps('lint.core', 'lint.dry'),
       core: 'eslint --fix .',
-      dry: 'twly --boring --lines 3 -t .trc',
+      dry: 'twly --boring --lines 5 -t .trc',
     },
     meta: {
       description: 'build a reference image of the codebase',
