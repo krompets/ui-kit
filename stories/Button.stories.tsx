@@ -1,11 +1,14 @@
 import { Button } from '@chakra-ui/react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+import results from '../.jest-test-results.json'
+import { withTests } from '@storybook/addon-jest'
 
 import DemoPlusIcon from './DemoPlusIcon'
 
 export default {
   title: 'Components/Button',
   component: Button,
+  decorators: [withTests({ results })],
   argTypes: {
     size: {
       options: ['large', 'medium', 'small'],
@@ -34,6 +37,7 @@ Primary.args = {
   ...commonProps,
   variant: 'primary',
   size: 'large',
+  jest: 'Button.spec.tsx',
 }
 
 export const Secondary: ComponentStory<typeof Button> = args => (

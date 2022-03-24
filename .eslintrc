@@ -19,6 +19,5 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    "no-restricted-imports": ["error", { "patterns": ["\\.\\./.*"] }]
   }
 }
