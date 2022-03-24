@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Button, Icon } from '@chakra-ui/react'
-import { ComponentMeta } from '@storybook/react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 const DemoPlusIcon: FC = () => (
   <Icon viewBox="0 0 24 24">
@@ -27,7 +27,7 @@ const commonProps = {
   isDisabled: false,
 }
 
-export const Primary: ComponentStory<FC> = args => (
+export const Primary: ComponentStory<typeof Button> = args => (
   <>
     <Button {...args}>Button</Button>
     <Button leftIcon={<DemoPlusIcon />} {...args}>
@@ -41,7 +41,7 @@ Primary.args = {
   size: 'large',
 }
 
-export const Secondary: ComponentStory<FC> = args => (
+export const Secondary: ComponentStory<typeof Button> = args => (
   <>
     <Button {...args}>Button</Button>
     <Button leftIcon={<DemoPlusIcon />} {...args}>
@@ -55,7 +55,7 @@ Secondary.args = {
   size: 'medium',
 }
 
-export const Tertiary: ComponentStory<FC> = args => (
+export const Tertiary: ComponentStory<typeof Button> = args => (
   <>
     <Button {...args}>Button</Button>
     <Button leftIcon={<DemoPlusIcon />} {...args}>

@@ -1,0 +1,1 @@
+{ "ignore": ["dist", "node_modules/**/*.*", ".git/**/*.*"] }

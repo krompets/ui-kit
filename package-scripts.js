@@ -6,8 +6,9 @@ const folders = ['components', 'hooks', 'public', 'styles', 'svg', 'utils']
 module.exports = {
   scripts: {
     dev: {
+      prebuild: `nps test.withOutput`,
       custom: `start-storybook`,
-      script: `nps "dev.custom -p ${PORT}"`,
+      script: `nps dev.prebuild "dev.custom -p ${PORT}"`,
       description: `runs on ${PORT} by default`,
     },
     bureaucracy: {
@@ -19,7 +20,7 @@ module.exports = {
       description: 'lint and keep things DRY',
       script: concurrent.nps('lint.core', 'lint.dry'),
       core: 'eslint --fix .',
-      dry: 'twly --boring --lines 3',
+      dry: 'twly --boring --lines 3 -t .trc',
     },
     meta: {
       description: 'build a reference image of the codebase',
@@ -44,6 +45,8 @@ module.exports = {
       script: 'jest',
       watch: 'nps "test --watch"',
       snapshot: 'nps "test -u"',
+      withOutput:
+        'nps "test --json --outputFile=.jest-test-results.json" || true',
     },
     publish: 'npm publish',
     precommit: 'nps care',
